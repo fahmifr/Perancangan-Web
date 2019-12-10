@@ -5,11 +5,12 @@
 <head>
     <title>Yash Academy</title>
     <link rel="shortcut icon" href="img/13.png">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="css/Signup.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/Modal.css">
 
 </head>
 
-<body>
+<body background="img/aa.jpg">
     <div class="header">
         <nav>
             <ul>
@@ -37,7 +38,8 @@
                 <input type='file' id="inputFile" />
                 <img id="image_upload_preview" src="http://placehold.it/100x100" alt="your image"
                     style="width: 100px;" />
-                <br><button type="submit" style="margin-bottom: 15px;">Register</button>
+                <br><button id="buttonn" type="submit" style="margin-bottom: 15px;">Register</button>
+
             </form>
 
 
@@ -88,6 +90,56 @@
         });
     </script>
 
+    <canvas id="kotak" width="1200" height="100">
+    </canvas>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var c = document.getElementById("kotak");
+            var ctx = c.getContext("2d");
+            x = 0;
+            y = 0;
+            animate();
+
+            function animate() {
+                ctx.clearRect(0, 0, c.width, c.height);
+                ctx.fillRect(x, 50, 200, 30);
+                x += 2;
+
+                setTimeout(animate, 50);
+            }
+        }
+    </script>
+    <marquee scrolldelay="200"> Hiduplah seakan - akan kau akan mati besok.Belajarlah seakan - akan
+        kau akan hidup selamanya - Mahatma Gandhi -
+        Cara termudah jadi pandai adalah belajar dari hal terbodoh yang pernah kamu lakukan </marquee>
+
+    <!--modal section-->
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="close">+</div>
+            <form action="">
+                <h1>WELCOME TO YASH ACADEMY </h1>
+            </form>
+        </div>
+        <script>
+            document.getElementById('buttonn').addEventListener('click', function () {
+                document.querySelector('.bg-modal').style.display = 'flex';
+            });
+            document.querySelector('.close').addEventListener('click', function () {
+                document.querySelector('.bg-modal').style.display = 'none';
+            });
+
+            function toggleModal() {
+                modal.classList.toggle("show-modal");
+            }
+
+            function windowOnClick(event) {
+                if (event.target === modal) {
+                    toggleModal();
+                }
+            }
+        </script>
 </body>
 
 </html>
