@@ -5,11 +5,11 @@
 }
 
 body {
-    background-color: black;
+    background-color: cornsilk;
 }
 
 .header {
-    background-image: url(img/aa.jpg);
+    background-image: url(../img/aa.jpg);
     background-size: cover;
     padding-bottom: 50px;
     /* height: 500px; */
@@ -72,7 +72,7 @@ nav ul li .tombol:hover {
 nav ul li a {
     display: block;
     padding: 10px 20px;
-    color: #fff;
+    color: black;
     text-decoration: none;
 }
 
@@ -89,7 +89,7 @@ nav ul li a {
 }
 
 .socialmedia {
-    color: #fff;
+    color: black;
     float: left;
     margin-left: 70px;
     margin-top: -90px;
@@ -106,7 +106,7 @@ nav ul li a {
 }
 
 .meidapartner {
-    color: #fff;
+    color: black;
     margin-bottom: 30px;
 }
 
@@ -116,7 +116,7 @@ nav ul li a {
 }
 
 .contact {
-    color: #fff;
+    color: black;
     float: right;
     margin-right: 70px;
     margin-top: -90px;
@@ -211,7 +211,7 @@ button {
     }
 
     .socialmedia {
-        color: #fff;
+        color: black;
         float: none;
         margin-left: 0px;
         margin-top: 0px;
@@ -219,7 +219,7 @@ button {
     }
 
     .contact {
-        color: #fff;
+        color: black;
         float: none;
         margin-right: 0px;
         margin-top: 0px;
@@ -233,19 +233,6 @@ button {
 
     .tulisan h1 {
         font-size: 40pt;
-    }
-
-    .trigger {
-        width: 350px;
-        height: 50px;
-        padding: 20px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        margin-top: -120px;
-        margin-left: -220px;
-        background-color: rgba(0, 0, 0, 0.5);
-        position: relative;
     }
 
     .modal {
