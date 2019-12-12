@@ -4,7 +4,6 @@
     font-family: Fira sans, sans-serif;
 }
 
-
 body {
     background-color: white;
 }
@@ -13,7 +12,7 @@ body {
     background-image: url(../img/aa.jpg);
     background-size: cover;
     padding-bottom: 50px;
-    /* height: 500px; */
+
 }
 
 nav {
@@ -246,23 +245,21 @@ nav ul li a {
         margin-top: 0px;
 
     }
-
     .contact {
-        color: #fff;
-        float: none;
-        margin-right: 0px;
-        margin-top: 0px;
-        padding-bottom: 20px;
+    color: #fff;
+    float: none;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 20px;
 
-    }
+}
+.tulisan p {
+    font-size: 20pt;
+}
 
-    .tulisan p {
-        font-size: 20pt;
-    }
-
-    .tulisan h1 {
-        font-size: 40pt;
-    }
+.tulisan h1 {
+    font-size: 40pt;
+}
 
 
 }

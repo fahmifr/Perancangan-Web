@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="img/13.png">
     <link rel="stylesheet" href="css/Signup.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/Modal.css">
-
+    
 </head>
 
 <body>
@@ -34,20 +34,25 @@
                 <input type="text" id="username" class="form-group" placeholder="Username" required><br>
                 <input type="password" id="password" class="form-group" placeholder="Password" required><br>
                 <input type="password" id="password" class="form-group" placeholder="Re-Password" required><br>
-
-                <input type='file' id="inputFile" />
-                <img id="image_upload_preview" src="http://placehold.it/100x100" alt="your image"
+                
+                <div class="image-center">
+                    <img id="image_upload_preview" src="http://placehold.it/100x100" alt="your image"
                     style="width: 100px;" />
+                </div>
+                <div class="input-hidden">
+                    <input type='file' id="inputFile" />
+                </div>
+                
                 <br><button id="buttonn" type="submit" style="margin-bottom: 15px;">Register</button>
-
+                
             </form>
-
-
+            
+            
             <a href="Login.html" class="btnLogin" style="color:#fff;">Back to Login</a>
         </div>
-
+        
     </div>
-
+    
     <div class="footer">
         <div class="meidapartner">
             <h5>Media Partner</h5>
@@ -66,62 +71,82 @@
             <h5>Contact Us</h5>Yash_Academy.ac.id</p>
         </div>
     </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        function alertAction() {
-            alert("Silahkan Login Atau Sign Up Terlebih Dahulu");
-        }
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#image_upload_preview').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        $("#inputFile").change(function () {
-            readURL(this);
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function alertAction() {
+        alert("Silahkan Login Atau Sign Up Terlebih Dahulu");
+    }
+    
+ 
+        $('#buttonn').click(function () {
+            $('.bg-modal').addClass('showModal');
         });
-    </script>
-
-    <canvas id="kotak" width="1200" height="100">
-    </canvas>
-
-    <script type="text/javascript">
-        window.onload = function () {
-            var c = document.getElementById("kotak");
-            var ctx = c.getContext("2d");
-            x = 0;
-            y = 0;
-            animate();
-
-            function animate() {
-                ctx.clearRect(0, 0, c.width, c.height);
-                ctx.fillRect(x, 50, 200, 30);
-                x += 2;
-
-                setTimeout(animate, 50);
+        $('.close').click(function () {
+            $('.bg-modal').addClass('hideModal');
+            $('.bg-modal').removeClass('showModal');
+        });
+   
+    
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#image_upload_preview').attr('src', e.target.result);
             }
+            
+            reader.readAsDataURL(input.files[0]);
         }
-    </script>
-    <marquee scrolldelay="200"> Hiduplah seakan - akan kau akan mati besok.Belajarlah seakan - akan
-        kau akan hidup selamanya - Mahatma Gandhi -
-        Cara termudah jadi pandai adalah belajar dari hal terbodoh yang pernah kamu lakukan </marquee>
+    }
+    
+    $("#inputFile").change(function () {
+        readURL(this);
+        $('.input-hidden').css({
+            'opacity':'0'
+        });
+    });
+</script>
 
+<script>
+    $('#image_upload_preview').click(function () {
+        $('#inputFile').click();
+    });
+</script>
+
+<canvas id="kotak" width="1200" height="100">
+</canvas>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var c = document.getElementById("kotak");
+        var ctx = c.getContext("2d");
+        x = 0;
+        y = 0;
+        animate();
+        
+        function animate() {
+            ctx.clearRect(0, 0, c.width, c.height);
+            ctx.fillRect(x, 50, 200, 30);
+            x += 2;
+            
+            setTimeout(animate, 50);
+        }
+    }
+</script>
+<marquee scrolldelay="200"> Hiduplah seakan - akan kau akan mati besok.Belajarlah seakan - akan
+    kau akan hidup selamanya - Mahatma Gandhi -
+    Cara termudah jadi pandai adalah belajar dari hal terbodoh yang pernah kamu lakukan </marquee>
+    
     <!--modal section-->
     <div class="bg-modal">
         <div class="modal-content">
             <div class="close">+</div>
             <form action="">
-                <h1> PLEASE FILL OUT ALL FIELD!! </h1>
+                <h1>Please fill Out all fild !!!</h1>
             </form>
         </div>
+        <script src="js/jquery.min.js"></script>
         <script>
             document.getElementById('buttonn').addEventListener('click', function () {
                 document.querySelector('.bg-modal').style.display = 'flex';
@@ -129,17 +154,17 @@
             document.querySelector('.close').addEventListener('click', function () {
                 document.querySelector('.bg-modal').style.display = 'none';
             });
-
+            
             function toggleModal() {
                 modal.classList.toggle("show-modal");
             }
-
+            
             function windowOnClick(event) {
                 if (event.target === modal) {
                     toggleModal();
                 }
             }
         </script>
-</body>
-
-</html>
+    </body>
+    
+    </html>

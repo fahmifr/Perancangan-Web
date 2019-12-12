@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: cornsilk;
+    background-color: black;
 }
 
 .header {
@@ -19,8 +19,8 @@ nav {
     margin: auto;
     text-align: center;
     width: 90%;
-
-
+    
+    
 }
 
 nav img {
@@ -39,13 +39,13 @@ nav ul {
 
 nav ul li {
     float: right;
-
+    
 }
 
 nav .tombolmaning {
     float: right;
     margin-top: 40px;
-
+    
 }
 
 nav .icon {
@@ -72,12 +72,12 @@ nav ul li .tombol:hover {
 nav ul li a {
     display: block;
     padding: 10px 20px;
-    color: black;
+    color: #fff;
     text-decoration: none;
 }
 
 .tombol {
-
+    
     border-radius: 10px;
     padding: 10px 20px;
     text-align: center;
@@ -89,11 +89,11 @@ nav ul li a {
 }
 
 .socialmedia {
-    color: black;
+    color: #fff;
     float: left;
     margin-left: 70px;
     margin-top: -90px;
-
+    
 }
 
 .socialmedia ul li {
@@ -106,7 +106,7 @@ nav ul li a {
 }
 
 .meidapartner {
-    color: black;
+    color: #fff;
     margin-bottom: 30px;
 }
 
@@ -116,11 +116,11 @@ nav ul li a {
 }
 
 .contact {
-    color: black;
+    color: #fff;
     float: right;
     margin-right: 70px;
     margin-top: -90px;
-
+    
 }
 
 .content {
@@ -166,40 +166,40 @@ button {
         margin: 0;
         padding: 0;
     }
-
+    
     body {
         width: 100%;
-
+        
     }
-
+    
     .header {
         margin: auto;
         width: 100%;
     }
-
+    
     .header nav {
         width: 30%;
     }
-
+    
     .header nav ul li img {
         margin-top: -5px;
     }
-
+    
     .header nav ul li .tombol,
     .header nav ul li .tombol_lain {
         width: 100%;
         text-align: center;
     }
-
+    
     nav ul li .tombol_lain:hover {
         border-bottom: 2px solid #5075ee;
     }
-
+    
     nav ul li .tombol:hover {
         background-color: #5075ee;
         border-bottom: 2px solid #5075ee;
     }
-
+    
     .form-group {
         margin: 10px;
         padding: 5px;
@@ -209,32 +209,45 @@ button {
         border-radius: 10px;
         color: black;
     }
-
+    
     .socialmedia {
-        color: black;
+        color: #fff;
         float: none;
         margin-left: 0px;
         margin-top: 0px;
-
+        
     }
-
+    
     .contact {
-        color: black;
+        color: #fff;
         float: none;
         margin-right: 0px;
         margin-top: 0px;
         padding-bottom: 20px;
-
+        
     }
-
+    
     .tulisan p {
         font-size: 20pt;
     }
-
+    
     .tulisan h1 {
         font-size: 40pt;
     }
-
+    
+    .trigger {
+        width: 350px;
+        height: 50px;
+        padding: 20px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -120px;
+        margin-left: -220px;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: relative;
+    }
+    
     .modal {
         position: fixed;
         left: 0;
@@ -244,10 +257,12 @@ button {
         background-color: rgba(0, 0, 0, 0.5);
         opacity: 0;
         visibility: hidden;
+        opacity: 0;
+        z-index: -1;
         transform: scale(1.1);
         transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
     }
-
+    
     .modal-content {
         position: absolute;
         top: 50%;
@@ -257,8 +272,10 @@ button {
         padding: 1rem 1.5rem;
         width: 24rem;
         border-radius: 0.5rem;
-    }
+        background-color: #cccccc57;
 
+    }
+    
     .close-button {
         float: right;
         width: 1.5rem;
@@ -268,16 +285,77 @@ button {
         border-radius: 0.25rem;
         background-color: lightgray;
     }
-
+    
     .close-button:hover {
         background-color: darkgray;
     }
-
+    
     .show-modal {
         opacity: 1;
         visibility: visible;
         transform: scale(1.0);
         transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
     }
+    
+}
 
+.image-center{
+    text-align: center;
+}
+
+.input-hidden{
+    position: relative;
+    display: inline-block;
+    background-color: white;
+}
+
+/* .input-hidden::after{
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 22px;
+    background-color: white;
+    left: 0;
+} */
+
+
+.hideModal{
+	z-index:-1;
+	opacity:0;
+	animation: hide .25s;
+
+	transform: scale(0);
+}
+@keyframes hide {
+	from{
+		z-index:2;
+		transform: scale(1);
+		opacity:1;
+	} 
+	to{
+		z-index:-1;
+		transform: scale(0);
+		opacity: 0;
+	}
+}
+.showModal{
+	opacity:1;
+	z-index:2;
+	animation: show .2s;
+
+	transform: scale(1);
+}
+
+@keyframes show {
+	from{
+
+		transform: scale(0);
+		opacity:0;
+		z-index:-1;
+	} 
+	to{
+		transform: scale(1);
+		opacity: 1;
+		z-index:2;
+	}
 }
