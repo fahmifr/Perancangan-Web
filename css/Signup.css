@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: black;
+    background-color:white;
 }
 
 .header {
@@ -86,10 +86,11 @@ nav ul li a {
 .footer {
     margin: 50px auto 0 auto;
     text-align: center;
+    background-color: white;
 }
 
 .socialmedia {
-    color: #fff;
+    color:black;
     float: left;
     margin-left: 70px;
     margin-top: -90px;
@@ -106,7 +107,7 @@ nav ul li a {
 }
 
 .meidapartner {
-    color: #fff;
+    color:black;
     margin-bottom: 30px;
 }
 
@@ -116,7 +117,7 @@ nav ul li a {
 }
 
 .contact {
-    color: #fff;
+    color: black;
     float: right;
     margin-right: 70px;
     margin-top: -90px;
